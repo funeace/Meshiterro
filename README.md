@@ -20,3 +20,8 @@
 # rails g devise:views → 各種viewファイルが自動的に生成される
 
 # deviseはコントローラが用意されない →  編集を行う場合は、application_controllerに記述する
+
+# form_for (resource, as:resource_name,url: registration_path(resource_name)) → ユーザ登録を行うためのフォーム
+  resource: DEVISE独自の書き方。多分コントローラーがないから
+  as:       resourceの別名
+  url:      処理を行うためのリンク先
