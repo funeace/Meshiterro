@@ -22,6 +22,6 @@
 # deviseはコントローラが用意されない →  編集を行う場合は、application_controllerに記述する
 
 # form_for (resource, as:resource_name,url: registration_path(resource_name)) → ユーザ登録を行うためのフォーム
-  resource: DEVISE独自の書き方。多分コントローラーがないから
-  as:       resourceの別名
-  url:      処理を行うためのリンク先
+resource   編集したいモデルのオブジェクト（インスタンス）はどのようなモデルにも対応するため、resourceという抽象化したものを置く
+as         モデルのオブジェクト（インスタンス）に対してキーを指定する（今回はresource_name）
+registration_path(resource_name)    urlで指定したregistration＿pathに対して、キーのresource_nameを（）内に定義し、どのモデルのインスタンスなのかを明らかにし、urlを明確にする
