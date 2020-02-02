@@ -1,24 +1,22 @@
-# README
+#README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ログイン認証
+# devise　を利用する
 
-Things you may want to cover:
+#利用方法
+#gemに追加
+# rails g devise （モデル名) →  データベースのmigrationファイルと、その他各種ファイルが自動的に生成される(※controllerはない)
+# データベースの中身を確認し、rails db:migrateでテーブルが作成される
 
-* Ruby version
 
-* System dependencies
+#モデルの中で実装される機能(デフォルト)
+#database_authenticatable   パスワードの正確性 
+#registerable               ユーザ登録や編集・制限
+#recoverable                パスワードの初期化
+#rememberable               ログイン情報の記憶
+#validatable                emailのフォーマット等のvalidate
 
-* Configuration
 
-* Database creation
+#rails g devise:views → 各種viewファイルが自動的に生成される
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# deviseはコントローラが用意されない →  編集を行う場合は、application_controllerに記述する
