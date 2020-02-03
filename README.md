@@ -1,6 +1,4 @@
 # README
-
-
 # schema.rb で作成したdbのスキーマが見れる　そのまま
 # ログイン認証
 # devise　を利用する
