@@ -9,7 +9,9 @@
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <%= attachment_image_tag post_image, :image %>
+                    <%= link_to post_image_path(post_image.id) do %>
+                        <%= attachment_image_tag post_image, :image %>
+                    <% end %>                  
                   </div>
                 </div>
                 <div class="block-content">
@@ -18,25 +20,21 @@
                   <%= link_to post_image_path(post_image.id) do %>
                      <i class="fa fa-map-marker"></i><%= post_image.shop_name %>
                   <% end %>
-
-                  <%= link_to post_image_path(post_image.id) do %>
-                    <%= attachment_image_tag post_image, :image %>
-                  <% end %>
-                  
                   </h3>
                   <p><%= post_image.caption %></p>
-                  <ul class="inline-meta">
-                    <li>By
-                      <%= post_image.user.name %>
-                    </li>
-                    <li>
-                    <a href="#">23 コメント</a>
-                    </li>
-                  </ul>
+                    <ul class="inline-meta">
+                      <li>By
+                        <%= post_image.user.name %>
+                      </li>
+                      <li>
+                        <%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id) %>
+                      </li>
+                    </ul>
                 </div>
               </div>
             </div>
             <% end %>
+            <%= paginate @post_images,class: "paginate" %>
         </div>
       </div>
     </div>
